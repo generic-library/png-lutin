@@ -25,6 +25,7 @@ def create(target):
 		'png/png/wutil.c'])
 	myModule.compile_flags('c', [
 		'-DPNG_NO_LIMITS_H'])
+	myModule.compile_version_CC(1999)
 	myModule.add_module_depend('z')
 	myModule.add_export_path(tools.get_current_path(__file__) + "/png")
 	return myModule
