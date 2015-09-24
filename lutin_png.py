@@ -6,8 +6,8 @@ def get_desc():
 	return "png file reader and writer"
 
 def create(target):
-	myModule = module.Module(__file__, 'png', 'LIBRARY')
-	myModule.add_src_file([
+	my_module = module.Module(__file__, 'png', 'LIBRARY')
+	my_module.add_src_file([
 		'png/png/png.c',
 		'png/png/error.c',
 		'png/png/get.c',
@@ -23,11 +23,11 @@ def create(target):
 		'png/png/write.c',
 		'png/png/wtran.c',
 		'png/png/wutil.c'])
-	myModule.compile_flags('c', [
+	my_module.compile_flags('c', [
 		'-DPNG_NO_LIMITS_H'])
-	myModule.compile_version_CC(1999)
-	myModule.add_module_depend('z')
-	myModule.add_export_path(tools.get_current_path(__file__) + "/png")
-	return myModule
+	my_module.compile_version_CC(1999)
+	my_module.add_module_depend('z')
+	my_module.add_export_path(tools.get_current_path(__file__) + "/png")
+	return my_module
 
 
