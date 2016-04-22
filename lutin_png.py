@@ -23,38 +23,42 @@ def get_maintainer():
 	return ["Cosmin Truta"]
 
 def get_version():
-	return [1,4,1]
+	return [1,6,21]
 
 def create(target, module_name):
 	my_module = module.Module(__file__, module_name, get_type())
 	my_module.add_src_file([
-		'png/png/png.c',
-		'png/png/error.c',
-		'png/png/get.c',
-		'png/png/mem.c',
-		'png/png/pread.c',
-		'png/png/read.c',
-		'png/png/rio.c',
-		'png/png/rtran.c',
-		'png/png/rutil.c',
-		'png/png/set.c',
-		'png/png/trans.c',
-		'png/png/wio.c',
-		'png/png/write.c',
-		'png/png/wtran.c',
-		'png/png/wutil.c'])
+	    'png/png/pngwtran.c',
+	    'png/png/pngwrite.c',
+	    'png/png/pngpread.c',
+	    'png/png/pngrtran.c',
+	    'png/png/pngmem.c',
+	    'png/png/png.c',
+	    'png/png/pngget.c',
+	    'png/png/pngwio.c',
+	    'png/png/pngtest.c',
+	    'png/png/pngtrans.c',
+	    'png/png/pngrutil.c',
+	    'png/png/pngset.c',
+	    'png/png/pngread.c',
+	    'png/png/pngrio.c',
+	    'png/png/pngwutil.c',
+	    'png/png/pngerror.c',
+	    ])
 	my_module.compile_flags('c', [
-		'-DPNG_NO_LIMITS_H'])
+	    '-DPNG_NO_LIMITS_H'])
 	my_module.compile_version("c", 1999)
 	my_module.add_module_depend('z')
 	my_module.add_path(os.path.join(tools.get_current_path(__file__), "png"))
 	my_module.add_header_file([
-		'png/png/config.h',
-		'png/png/conf.h',
-		'png/png/priv.h',
-		'png/png/png.h'
-		],
-		destination_path="png")
+	    'png/png/png.h',
+	    'png/png/pngpriv.h',
+	    'png/png/pngstruct.h',
+	    'png/png/pngdebug.h',
+	    'png/png/pnginfo.h',
+	    'png/png/pngconf.h',
+	    ],
+	    destination_path="png")
 	return my_module
 
 
