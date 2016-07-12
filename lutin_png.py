@@ -28,6 +28,11 @@ def get_version():
 def create(target, module_name):
 	my_module = module.Module(__file__, module_name, get_type())
 	my_module.add_src_file([
+	    'png/png/arm/arm_init.c',
+	    'png/png/arm/filter_neon_intrinsics.c',
+	    'png/png/arm/filter_neon.S',
+	    ])
+	my_module.add_src_file([
 	    'png/png/pngwtran.c',
 	    'png/png/pngwrite.c',
 	    'png/png/pngpread.c',
