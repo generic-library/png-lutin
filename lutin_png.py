@@ -50,6 +50,11 @@ def create(target, module_name):
 	my_module.compile_version("c", 1999)
 	my_module.add_module_depend('z')
 	my_module.add_path(os.path.join(tools.get_current_path(__file__), "png"))
+	my_module.add_path(os.path.join(tools.get_current_path(__file__), "generate"))
+	my_module.add_header_file([
+	    'generate/pnglibconf.h',
+	    ],
+	    destination_path="png")
 	my_module.add_header_file([
 	    'png/png/png.h',
 	    'png/png/pngpriv.h',
