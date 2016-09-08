@@ -50,10 +50,10 @@ def create(target, module_name):
 	    'png/png/pngwutil.c',
 	    'png/png/pngerror.c',
 	    ])
-	my_module.compile_flags('c', [
+	my_module.add_flag('c', [
 	    '-DPNG_NO_LIMITS_H'])
 	my_module.compile_version("c", 1999)
-	my_module.add_module_depend([
+	my_module.add_depend([
 	    'z',
 	    'm'
 	    ])
