@@ -26,11 +26,12 @@ def get_version():
 	return [1,6,21]
 
 def configure(target, my_module):
-	my_module.add_src_file([
-	    'png/png/arm/arm_init.c',
-	    'png/png/arm/filter_neon_intrinsics.c',
-	    'png/png/arm/filter_neon.S',
-	    ])
+	if target.get_arch() == "arm":
+		my_module.add_src_file([
+		    'png/png/arm/arm_init.c',
+		    'png/png/arm/filter_neon_intrinsics.c',
+		    'png/png/arm/filter_neon.S',
+		    ])
 	my_module.add_src_file([
 	    'png/png/pngwtran.c',
 	    'png/png/pngwrite.c',
