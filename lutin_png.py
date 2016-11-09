@@ -41,7 +41,6 @@ def configure(target, my_module):
 	    'png/png/png.c',
 	    'png/png/pngget.c',
 	    'png/png/pngwio.c',
-	    'png/png/pngtest.c',
 	    'png/png/pngtrans.c',
 	    'png/png/pngrutil.c',
 	    'png/png/pngset.c',
